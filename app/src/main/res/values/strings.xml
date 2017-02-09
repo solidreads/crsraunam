@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">MisContactos</string>
+    <string name="nombre">Daniel Sanchez</string>
+    <string name="telefono">55555</string>
+    <string name="email">daniel@gmail.com</string>
 </resources>
