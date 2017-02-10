@@ -3,4 +3,8 @@
     <string name="nombre">Daniel Sanchez</string>
     <string name="telefono">55555</string>
     <string name="email">daniel@gmail.com</string>
+
+    <string name="pnombre">nombre</string>
+    <string name="ptelefono">telefono</string>
+    <string name="pemail">email</string>
 </resources>

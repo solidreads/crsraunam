@@ -1,7 +1,10 @@
 package com.example.seader.miscontactos;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -32,5 +35,17 @@ public class MainActivity extends AppCompatActivity {
 
         ListView lstContactos = (ListView) findViewById(R.id.lstContactos);
         lstContactos.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, nombresContacto));
+
+        //intent inplicito comunicar dos actividades
+        lstContactos.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id){
+                Intent intent = new Intent(MainActivity.this, DetalleContacto.class);
+                intent.putExtra(getResources().getString(R.string.pnombre), contactos.get(position).getNombre());
+                intent.putExtra(getResources().getString(R.string.ptelefono), contactos.get(position).getTelefono());
+                intent.putExtra(getResources().getString(R.string.pemail), contactos.get(position).getEmail());
+                startActivity(intent);
+            }
+        });
     }
 }
